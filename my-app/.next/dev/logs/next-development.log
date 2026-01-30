@@ -1,0 +1,312 @@
+[00:00:02.685] Server  LOG     ✓ Ready in 2.1s
+[00:02:13.981] Server  LOG     ○ Compiling / ...
+[00:02:15.540] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:15.631] Browser WARN    Image with src "http://localhost:3000/vercel.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:16.036] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:16.160] Browser WARN    Image with src "http://localhost:3000/vercel.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:33.567] Server  ERROR   ⨯ Error: The default export is not a React Component in "/page"
+[00:02:33.918] Server  ERROR   ⨯ Error: The default export is not a React Component in "/page"
+[00:02:34.407] Server  ERROR   ⨯ Error: The default export is not a React Component in "/page"
+[00:02:34.793] Server  ERROR   ⨯ Error: The default export is not a React Component in "/page"
+[00:02:36.142] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/page"
+[00:04:59.610] Server  LOG     ✓ Compiled in 92ms
+[00:05:05.770] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:50.086] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:56.176] Server  LOG     ○ Compiling /_not-found/page ...
+[00:16:00.323] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:24.413] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:25.428] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:25.428] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:26.423] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:26.423] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:26.423] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:26.423] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:27.449] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:27.449] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:27.450] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:27.450] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:28.420] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:28.420] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:31.412] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:31.412] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:31.989] Server  LOG     ✓ Compiled in 123ms
+[00:21:31.993] Browser ERROR   ./app/page.tsx:50:13
+Parsing ecmascript source code failed
+  48 |           </a>
+  49 |         </p>
+> 50 |       </div>
+     |             ^
+> 51 |     </div>
+     | ^^^^^
+  52 |   );
+  53 | }
+
+Expected '</', got 'jsx text'
+[00:21:32.933] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:33.448] Server  LOG     ✓ Compiled in 270ms
+[00:26:03.459] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:08.534] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:15.897] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:22.936] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:40.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
