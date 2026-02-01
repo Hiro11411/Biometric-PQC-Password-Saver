@@ -105,7 +105,7 @@ export default function BiographyPage() {
 
       {/* Footer */}
       <footer className="border-t border-gray-600/30 py-8 text-center text-gray-400">
-        <p>&copy; 2026 QuantumVault. Built for research purposes.</p>
+        <p>&copy; 2026 Enigma. Built for research purposes.</p>
       </footer>
     </div>
   );

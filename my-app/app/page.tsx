@@ -6,7 +6,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-black via-red-950 to-black">
       {/* Navigation */}
       <nav className="flex justify-between items-center p-6 border-b border-red-900/30">
-        <h1 className="text-2xl font-bold text-red-500">QuantumVault</h1>
+        <h1 className="text-2xl font-bold text-red-500">Enigma</h1>
         <Link 
           href="/login"
           className="px-6 py-2 bg-red-700 hover:bg-red-800 text-white rounded-lg transition font-medium"
@@ -19,7 +19,7 @@ export default function HomePage() {
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="text-center mb-16">
           <h2 className="text-6xl font-bold text-red-500 mb-6 drop-shadow-[0_0_20px_rgba(220,38,38,0.5)]">
-            QuantumVault
+            Enigma
           </h2>
           <p className="text-3xl text-red-300 mb-4">
             Post-Quantum Password Manager
@@ -79,7 +79,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-red-900/30 py-8 text-center text-red-400">
-        <p>&copy; 2026 QuantumVault. Built for research purposes.</p>
+        <p>&copy; 2026 Enigma. Built for research purposes.</p>
       </footer>
     </div>
   );

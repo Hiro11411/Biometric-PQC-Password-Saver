@@ -657,3 +657,7 @@ Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
 [03:01:29.071] Server  LOG     ✓ Compiled in 818ms
 [03:02:04.145] Server  LOG     ✓ Compiled in 94ms
 [03:02:58.968] Server  LOG     ✓ Compiled in 181ms
+[03:16:33.625] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:16:55.474] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:38:32.420] Server  LOG     ✓ Compiled in 474ms
+[04:41:39.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

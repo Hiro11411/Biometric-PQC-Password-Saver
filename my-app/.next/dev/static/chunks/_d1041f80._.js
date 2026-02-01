@@ -97,7 +97,7 @@ function SignupPage() {
                                             value: formData.username,
                                             onChange: handleChange,
                                             className: "w-full px-4 py-2.5 bg-purple-950/70 border border-purple-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-400 outline-none transition text-purple-100 placeholder-purple-800",
-                                            placeholder: "johndoe"
+                                            placeholder: "Zuick"
                                         }, void 0, false, {
                                             fileName: "[project]/app/signup/page.tsx",
                                             lineNumber: 51,
