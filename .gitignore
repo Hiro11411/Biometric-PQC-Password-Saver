@@ -5,3 +5,11 @@
 /my-app/node_modules
 
 main.py
+
+node_modules/
+
+data/enrolled_faces/
+
+data/temp_faces/
+
+data/encrypted/

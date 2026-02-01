@@ -1,16 +1,22 @@
 import cv2
 from deepface import DeepFace
+from kyber_py.kyber import Kyber512
+import os
 
 #cascade is used for speed, recognition of the different prompts
 #haar features used, check notes
 class BiometricSystem: 
     def __init__(self):
-        """
-        
-        """
+        #video section
         video=self.cv2.VideoCapture(0)
-
         self.face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml') #calling self, to later access it in the future
+
+        #file directory section
+        self.enrolled_dir = "data/enrolled_faces"
+        self.temp_dir = "data/temp_faces"
+        os.makedirs(self.enrolled_dir, exist_ok=True)
+        os.makedirs(self.temp_dir, exist_ok=True)
+
 
     def id_input(self): #func for now only, change in the future
         """
@@ -37,6 +43,78 @@ class BiometricSystem:
         confidence = emotion[emotion_dominant] / 100.0 #emotional confidence indicator as a percentage
         print(confidence, emotion, emotion_dominant)
         return emotion_dominant, confidence #parameter passing here 
+    
+    def first_encode(self, face_roi, user_id):
+        """
+        First time capturing the your face, saving the data for future use of analysis.
+        """
+        temp_path = f"{self.temp_dir}/user_{user_id}.jpg"
+
+        cv2.imwrite(temp_path, face_roi)
+
+        #extract embedding
+        embedding = DeepFace.represent(
+                img_path = temp_path,
+                model_name="Facenet"
+            )
+
+        embedded = embedding[0]['embedding'] #list of embedded values, Encrypt with this value here
+
+        #encrypt the embedding here
+
+        #figure out how to embedd in the future !!!!!
+
+        #save encrypted version and set it into a path
+        encrypted_path = f"{self.enrolled_dir}/user_{user_id}_encrypted.npy"
+       
+        np.save(encrypted_path, "") #fill out quotation with the embedded values
+        
+        print(f"Face Enrolled for ${user_id}!")
+        
+        return temp_path #for future use and calling
+        
+        os.remove(temp_path)
+
+    def second_encode(self, face_roi, user_id):
+        """
+        Compares your first and tries to verify your face.
+        """
+        #comparisson part
+        enrolled_encrypted_path = f"{self.enrolled_dir}_{user_id}_encrypted.npy"
+
+        if not os.path.exists(enrolled_path):
+            print("No enrolled data for this user") #link this back to your front end
+            return False
+
+        temp_path = f"{self.temp_dir}/temp_{user_id}.png" #temp path for access
+        cv2.imwrite(temp_path, face_roi)
+
+        embedding = DeepFace.represent(
+            img_path=temp_path,
+            model_name="Facenet"
+        )
+        current_embedding = embedding[0]['embedding']
+
+        #load and decrypt embedding
+
+        #compare embeddings
+
+
+        result = DeepFace.verify(img1_path=enrolled_path, img2_path=temp_path)
+        
+        # print(json.dumps(result, indent=2)) #result is a dict
+
+        os.remove(temp_path)
+        
+
+        #change up here, wrong logic compare thresholds and distances
+        # if result['verified']:
+        #     print('Correct Person')
+        #     return True
+        # else:
+        #     print('Incorrect Person')
+        #     return False
+        
 
     def main(self):
         id = self.id_input() #gets the original ID, and inputs here
@@ -84,6 +162,8 @@ video.release() #after done closes the webcam connection
 cv2.destroyAllWindows() #Closes all OpenCV windows
 print("Closed File, Frame")
 #should implement this here with main function, better for script, and safer/more efficient
+
+#encoding for first time vs encoding for second time
 
 #runs script
 if __name__ == '__main__':
