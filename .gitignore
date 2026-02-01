@@ -1,3 +1,5 @@
 .env
 
 /datasets
+
+/my-app/node_modules

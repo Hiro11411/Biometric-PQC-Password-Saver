@@ -1,312 +1,659 @@
-[00:00:02.685] Server  LOG     ✓ Ready in 2.1s
-[00:02:13.981] Server  LOG     ○ Compiling / ...
-[00:02:15.540] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:15.631] Browser WARN    Image with src "http://localhost:3000/vercel.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:02:16.036] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:16.160] Browser WARN    Image with src "http://localhost:3000/vercel.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:02:33.567] Server  ERROR   ⨯ Error: The default export is not a React Component in "/page"
-[00:02:33.918] Server  ERROR   ⨯ Error: The default export is not a React Component in "/page"
-[00:02:34.407] Server  ERROR   ⨯ Error: The default export is not a React Component in "/page"
-[00:02:34.793] Server  ERROR   ⨯ Error: The default export is not a React Component in "/page"
-[00:02:36.142] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/page"
-[00:04:59.610] Server  LOG     ✓ Compiled in 92ms
-[00:05:05.770] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:50.086] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:56.176] Server  LOG     ○ Compiling /_not-found/page ...
-[00:16:00.323] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:24.413] Browser ERROR   ./app/page.tsx:50:13
+[00:00:03.135] Server  LOG     ✓ Ready in 2.5s
+[00:01:39.108] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:49.970] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:51.788] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:47.034] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:59.866] Server  LOG     ✓ Compiled in 948ms
+[00:13:32.149] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:28.958] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:34.311] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:19.685] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:15.408] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:13:16.585] Server  LOG     ✓ Compiled in 912ms
+[01:13:37.167] Browser LOG     username Hiro
+[01:13:37.167] Browser LOG     email gansterbankster@gmail.com
+[01:14:08.722] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:14:50.374] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:15:00.238] Server  ERROR   ⨯ Error: The default export is not a React Component in "/signup/page"
+[01:15:00.523] Server  ERROR   ⨯ Error: The default export is not a React Component in "/signup/page"
+[01:15:01.163] Server  ERROR   ⨯ Error: The default export is not a React Component in "/signup/page"
+[01:15:01.443] Server  ERROR   ⨯ Error: The default export is not a React Component in "/signup/page"
+[01:15:01.632] Server  ERROR   ⨯ Error: The default export is not a React Component in "/signup/page"
+[01:15:01.816] Server  ERROR   ⨯ Error: The default export is not a React Component in "/signup/page"
+[01:15:02.143] Server  ERROR   ⨯ Error: The default export is not a React Component in "/signup/page"
+[01:15:02.345] Server  ERROR   ⨯ Error: The default export is not a React Component in "/signup/page"
+[01:15:02.571] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/signup/page"
+[01:15:03.745] Server  LOG     ✓ Compiled in 16ms
+[01:22:30.894] Server  LOG     ✓ Compiled in 304ms
+[01:22:32.109] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:33:46.933] Server  LOG     ✓ Compiled in 42ms
+[01:33:50.792] Server  LOG     ✓ Compiled in 35ms
+[01:33:51.390] Server  ERROR   ⨯ ChunkLoadError: Failed to load chunk server/chunks/ssr/[root-of-the-server]__83e7fc61._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/signup/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript, tag client)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/app/signup/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>
+[01:33:51.761] Server  ERROR   ChunkLoadError: Failed to load chunk server/chunks/ssr/[root-of-the-server]__83e7fc61._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/signup/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript, tag client)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/app/signup/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>
+[01:33:52.121] Server  ERROR   ⨯ "unhandledRejection:" ChunkLoadError: Failed to load chunk server/chunks/ssr/[root-of-the-server]__83e7fc61._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/signup/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript, tag client)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/app/signup/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>
+[01:33:52.474] Server  ERROR   ⨯ "unhandledRejection: " ChunkLoadError: Failed to load chunk server/chunks/ssr/[root-of-the-server]__83e7fc61._.js from module [project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/signup/page { GLOBAL_ERROR_MODULE => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", METADATA_0 => "[project]/app/favicon.ico.mjs { IMAGE => \"[project]/app/favicon.ico (static in ecmascript, tag client)\" } [app-rsc] (structured image object, ecmascript, Next.js Server Component)", MODULE_1 => "[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js Server Component)", MODULE_2 => "[project]/node_modules/next/dist/client/components/builtin/not-found.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_3 => "[project]/node_modules/next/dist/client/components/builtin/forbidden.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_4 => "[project]/node_modules/next/dist/client/components/builtin/unauthorized.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_5 => "[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-rsc] (ecmascript, Next.js Server Component)", MODULE_6 => "[project]/app/signup/page.tsx [app-rsc] (ecmascript, Next.js Server Component)" } [app-rsc] (ecmascript) <locals>
+[01:33:52.841] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:33:53.039] Server  LOG     ✓ Compiled in 19ms
+[01:33:54.025] Browser ERROR   uncaughtError: SyntaxError: Private field '#empty' must be declared in an enclosing class
+[01:33:59.430] Server  LOG     ✓ Compiled in 17ms
+[02:02:21.128] Server  LOG     ✓ Compiled in 46ms
+[02:02:23.369] Server  LOG     ✓ Compiled in 21ms
+[02:02:37.584] Server  LOG     ✓ Compiled in 21ms
+[02:02:57.250] Server  LOG     ✓ Compiled in 14ms
+[02:02:59.153] Server  LOG     ✓ Compiled in 24ms
+[02:03:16.199] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:03:23.657] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:03:24.753] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:04:01.472] Server  LOG     ✓ Compiled in 19ms
+[02:04:02.989] Server  LOG     ✓ Compiled in 17ms
+[02:04:06.272] Server  LOG     ✓ Compiled in 15ms
+[02:04:10.354] Server  LOG     ✓ Compiled in 98ms
+[02:04:10.473] Browser ERROR   ./app/signup/page.tsx:133:34
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  131 |               />
+  132 |               <label htmlFor="captcha" className="ml-2 block text-sm text-gray-700">
+> 133 |                 I'm not a robot {/}
+      |                                  ^^
+  134 |               </label>
+  135 |             </div>
+  136 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:04:14.992] Server  LOG     ✓ Compiled in 37ms
+[02:04:15.100] Browser ERROR   ./app/signup/page.tsx:144:18
+Parsing ecmascript source code failed
+  142 |               Create Account
+  143 |             </button>
+> 144 |           </form>
+      |                  ^
+> 145 |
+      | ^
+> 146 |           {/* Login Link */}
+      | ^^^^^^^^^^^
+  147 |           <p className="text-center text-sm text-gray-600 mt-6">
+  148 |             Already have an account?{' '}
+  149 |             <Link href="/login" className="text-blue-600 hover:underline font-medium">
 
 Expected '</', got 'jsx text'
-[00:21:25.428] Browser ERROR   ./app/page.tsx:50:13
-Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
 
-Expected '</', got 'jsx text'
-[00:21:25.428] Browser ERROR   ./app/page.tsx:50:13
-Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
 
-Expected '</', got 'jsx text'
-[00:21:26.423] Browser ERROR   ./app/page.tsx:50:13
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:05:07.680] Server  LOG     ✓ Compiled in 21ms
+[02:05:07.787] Browser ERROR   ./app/signup/page.tsx:30:6
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  28 |   };
+  29 |
+> 30 |   if formData.password
+     |      ^^^^^^^^
+  31 |
+  32 |
+  33 |
 
-Expected '</', got 'jsx text'
-[00:21:26.423] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:05:11.002] Browser ERROR   ./app/signup/page.tsx:30:6
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  28 |   };
+  29 |
+> 30 |   if formData.password == 
+     |      ^^^^^^^^
+  31 |
+  32 |
+  33 |
 
-Expected '</', got 'jsx text'
-[00:21:26.423] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:05:16.084] Browser ERROR   ./app/signup/page.tsx:30:6
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  28 |   };
+  29 |
+> 30 |   if formData.password.
+     |      ^^^^^^^^
+  31 |
+  32 |
+  33 |
 
-Expected '</', got 'jsx text'
-[00:21:26.423] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:05:19.006] Browser ERROR   ./app/signup/page.tsx:30:6
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  28 |   };
+  29 |
+> 30 |   if formData.password.includes
+     |      ^^^^^^^^
+  31 |
+  32 |
+  33 |
 
-Expected '</', got 'jsx text'
-[00:21:27.449] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:05:25.244] Browser ERROR   ./app/signup/page.tsx:30:6
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  28 |   };
+  29 |
+> 30 |   if formData.password.includes()
+     |      ^^^^^^^^
+  31 |
+  32 |
+  33 |
 
-Expected '</', got 'jsx text'
-[00:21:27.449] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:05:26.943] Browser ERROR   ./app/signup/page.tsx:30:6
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  28 |   };
+  29 |
+> 30 |   if formData.password.includes("")
+     |      ^^^^^^^^
+  31 |
+  32 |
+  33 |
 
-Expected '</', got 'jsx text'
-[00:21:27.450] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:05:31.474] Browser ERROR   ./app/signup/page.tsx:30:6
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  28 |   };
+  29 |
+> 30 |   if formData.password.includes("!%^#")
+     |      ^^^^^^^^
+  31 |
+  32 |
+  33 |
 
-Expected '</', got 'jsx text'
-[00:21:27.450] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:05:34.490] Browser ERROR   ./app/signup/page.tsx:30:6
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  28 |   };
+  29 |
+> 30 |   if formData.password.includes("!%^#") {
+     |      ^^^^^^^^
+  31 |     
+  32 |   }
+  33 |
 
-Expected '</', got 'jsx text'
-[00:21:28.420] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:05:40.163] Browser ERROR   ./app/signup/page.tsx:30:6
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  28 |   };
+  29 |
+> 30 |   if formData.password.includes("!%^#") {
+     |      ^^^^^^^^
+  31 |     
+  32 |   }
+  33 |
 
-Expected '</', got 'jsx text'
-[00:21:28.420] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:05:43.162] Browser ERROR   ./app/signup/page.tsx:30:6
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  28 |   };
+  29 |
+> 30 |   if formData.password.includes("!%^#") {
+     |      ^^^^^^^^
+  31 |     return null
+  32 |   }
+  33 |
 
-Expected '</', got 'jsx text'
-[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:06:09.889] Server  LOG     ✓ Compiled in 30ms
+[02:06:10.006] Browser ERROR   ./app/signup/page.tsx:21:8
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  19 |     // Handle signup logic
+  20 |     console.log(formData); //send to backend later
+> 21 |     if e 
+     |        ^
+  22 |   };
+  23 |
+  24 |   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
-Expected '</', got 'jsx text'
-[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:06:19.014] Browser ERROR   ./app/signup/page.tsx:20:8
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  18 |     e.preventDefault();
+  19 |     // Handle signup logic
+> 20 |     if e.c
+     |        ^
+  21 |     console.log(formData); //send to backend later
+  22 |   };
+  23 |
 
-Expected '</', got 'jsx text'
-[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:06:23.005] Browser ERROR   ./app/signup/page.tsx:20:8
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  18 |     e.preventDefault();
+  19 |     // Handle signup logic
+> 20 |     if e.c
+     |        ^
+  21 |     console.log(formData); //send to backend later
+  22 |   };
+  23 |
 
-Expected '</', got 'jsx text'
-[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Expected '(', got 'ident'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:06:29.396] Server  LOG     ✓ Compiled in 20ms
+[02:06:33.020] Server  LOG     ✓ Compiled in 21ms
+[02:08:22.910] Server  LOG     ✓ Compiled in 22ms
+[02:08:23.984] Server  LOG     ✓ Compiled in 27ms
+[02:08:33.367] Server  LOG     ✓ Compiled in 25ms
+[02:08:34.009] Browser ERROR   ./app/signup/page.tsx:21:8
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  19 |     // Handle signup logic
+  20 |     const allowed_CHAR = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+> 21 |     if()
+     |        ^
+  22 |     console.log(formData); //send to backend later
+  23 |   };
+  24 |
 
-Expected '</', got 'jsx text'
-[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:08:56.005] Server  LOG     ✓ Compiled in 24ms
+[02:08:57.012] Browser ERROR   ./app/signup/page.tsx:22:9
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  20 |     const allowed_CHAR = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  21 |     //for loop to check entire passwrod
+> 22 |     for()
+     |         ^
+  23 |     console.log(formData); //send to backend later
+  24 |   };
+  25 |
 
-Expected '</', got 'jsx text'
-[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:09:12.161] Server  LOG     ✓ Compiled in 24ms
+[02:09:13.015] Browser ERROR   ./app/signup/page.tsx:23:27
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  21 |     //for loop to check entire passwrod
+  22 |     for (let char of formData.password) {
+> 23 |         if (!allowed_CHAR/)
+     |                           ^
+  24 |     }
+  25 |     console.log(formData); //send to backend later
+  26 |   };
 
-Expected '</', got 'jsx text'
-[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:09:16.014] Browser ERROR   ./app/signup/page.tsx:24:5
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  22 |     for (let char of formData.password) {
+  23 |         if (!allowed_CHAR.includes)
+> 24 |     }
+     |     ^
+  25 |     console.log(formData); //send to backend later
+  26 |   };
+  27 |
 
-Expected '</', got 'jsx text'
-[00:21:30.417] Browser ERROR   ./app/page.tsx:50:13
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:09:30.006] Browser ERROR   ./app/signup/page.tsx:24:5
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  22 |     for (let char of formData.password) {
+  23 |         if (!allowed_CHAR.includes(char))
+> 24 |     }
+     |     ^
+  25 |     console.log(formData); //send to backend later
+  26 |   };
+  27 |
 
-Expected '</', got 'jsx text'
-[00:21:31.412] Browser ERROR   ./app/page.tsx:50:13
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:09:34.012] Browser ERROR   ./app/signup/page.tsx:24:5
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  22 |     for (let char of formData.password) {
+  23 |         if (!allowed_CHAR.includes(char))
+> 24 |     }
+     |     ^
+  25 |     console.log(formData); //send to backend later
+  26 |   };
+  27 |
 
-Expected '</', got 'jsx text'
-[00:21:31.412] Browser ERROR   ./app/page.tsx:50:13
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[02:09:46.437] Server  LOG     ✓ Compiled in 15ms
+[02:09:49.645] Server  LOG     ✓ Compiled in 17ms
+[02:13:44.299] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:13:45.439] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:13:45.887] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:13:47.681] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:13:47.824] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:13:47.988] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:13:48.161] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:13:48.534] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:13:48.834] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:13:51.021] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:13:51.147] Browser LOG     {"confirmPassword":"Main88889999","dateOfBirth":"2026-01-11","email":"gansterbankster@gmail.com","password":"Main88889999","username":"hiro!!!1"}
+[02:15:20.322] Server  LOG     ✓ Compiled in 226ms
+[02:15:50.077] Server  LOG     ✓ Compiled in 16ms
+[02:16:00.954] Server  LOG     ✓ Compiled in 19ms
+[02:38:12.798] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:38:14.154] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:38:27.342] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:38:28.757] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:38:43.134] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:38:49.044] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:38:56.945] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:41:42.076] Server  LOG     ✓ Compiled in 259ms
+[02:41:48.018] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:47:53.786] Server  LOG     ✓ Compiled in 56ms
+[02:47:53.895] Browser ERROR   ./app/page.tsx:108:7
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  106 |       </div>
+  107 |
+> 108 |       {/* Footer */}
+      |       ^
+  109 |       <footer className="border-t border-red-900/30 py-8 text-center text-red-400">
+  110 |         <p>&copy; 2026 QuantumVault. Built for research purposes.</p>
+  111 |       </footer>
 
-Expected '</', got 'jsx text'
-[00:21:31.989] Server  LOG     ✓ Compiled in 123ms
-[00:21:31.993] Browser ERROR   ./app/page.tsx:50:13
+Expected ',', got '{'
+[02:47:56.087] Browser ERROR   ./app/page.tsx:91:7
 Parsing ecmascript source code failed
-  48 |           </a>
-  49 |         </p>
-> 50 |       </div>
-     |             ^
-> 51 |     </div>
-     | ^^^^^
-  52 |   );
-  53 | }
+  89 |       </div>
+  90 |
+> 91 |       {/* Footer */}
+     |       ^
+  92 |       <footer className="border-t border-red-900/30 py-8 text-center text-red-400">
+  93 |         <p>&copy; 2026 QuantumVault. Built for research purposes.</p>
+  94 |       </footer>
 
-Expected '</', got 'jsx text'
-[00:21:32.933] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:25:33.448] Server  LOG     ✓ Compiled in 270ms
-[00:26:03.459] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:08.534] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:15.897] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:22.936] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:40.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Expected ',', got '{'
+[02:48:29.007] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:48:35.948] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:48:38.430] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:48:40.822] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:48:42.475] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:48:44.812] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:48:46.569] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:48:49.166] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:48:51.233] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:48:55.677] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:48:59.584] Browser ERROR   ./app/page.tsx:92:1
+Parsing ecmascript source code failed
+  90 |     </div>
+  91 |   );
+> 92 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:49:02.725] Browser ERROR   ./app/page.tsx:85:1
+Parsing ecmascript source code failed
+  83 |     </div>
+  84 |   );
+> 85 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:49:09.398] Browser ERROR   ./app/page.tsx:85:1
+Parsing ecmascript source code failed
+  83 |     </div>
+  84 |   );
+> 85 | }
+     | ^
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+[02:49:43.376] Server  ERROR   ⨯ Error: The default export is not a React Component in "/biography/page"
+[02:49:43.673] Server  ERROR   ⨯ Error: The default export is not a React Component in "/biography/page"
+[02:49:44.060] Server  ERROR   ⨯ Error: The default export is not a React Component in "/biography/page"
+[02:49:44.296] Server  ERROR   ⨯ Error: The default export is not a React Component in "/biography/page"
+[02:49:44.529] Server  ERROR   ⨯ Error: The default export is not a React Component in "/biography/page"
+[02:49:44.764] Server  ERROR   ⨯ Error: The default export is not a React Component in "/biography/page"
+[02:49:45.129] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/biography/page"
+[02:49:57.948] Server  ERROR   ⨯ Error: The default export is not a React Component in "/biography/page"
+[02:49:58.146] Server  ERROR   ⨯ Error: The default export is not a React Component in "/biography/page"
+[02:49:58.364] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/biography/page"
+[02:50:17.304] Server  LOG     ✓ Compiled in 59ms
+[02:50:17.896] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:54:28.764] Server  LOG     ✓ Compiled in 17ms
+[02:56:38.908] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:56:52.199] Server  LOG     ✓ Compiled in 16ms
+[02:57:20.648] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:57:51.837] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:57:53.746] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:57:55.132] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:57:56.435] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:01:29.071] Server  LOG     ✓ Compiled in 818ms
+[03:02:04.145] Server  LOG     ✓ Compiled in 94ms
+[03:02:58.968] Server  LOG     ✓ Compiled in 181ms
