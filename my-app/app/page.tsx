@@ -1,4 +1,4 @@
-//Introduction Page
+//Introduction nigger Page
 import Link from 'next/link';
 
 export default function HomePage() {
@@ -7,7 +7,7 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="flex justify-between items-center p-6 border-b border-red-900/30">
         <h1 className="text-2xl font-bold text-red-500">Enigma</h1>
-        <Link 
+        <Link
           href="/login"
           className="px-6 py-2 bg-red-700 hover:bg-red-800 text-white rounded-lg transition font-medium"
         >
@@ -27,7 +27,7 @@ export default function HomePage() {
           <p className="text-xl text-red-400 max-w-3xl mx-auto mb-8">
             The world's first password manager secured with quantum-resistant cryptography and biometric authentication
           </p>
-          <Link 
+          <Link
             href="/login"
             className="inline-block px-8 py-4 bg-gradient-to-r from-red-700 to-red-900 text-white text-lg rounded-lg hover:from-red-800 hover:to-red-950 transition font-medium shadow-lg shadow-red-900/50"
           >
@@ -63,9 +63,9 @@ export default function HomePage() {
           <p className="text-red-300 mb-6">
             Click the link to learn more about the creators of this website.
           </p>
-  
+
           {/* Biography Link */}
-          <Link 
+          <Link
             href="/biography"
             className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-red-700 to-red-900 border border-red-800 rounded-lg hover:from-red-800 hover:to-red-950 transition text-white font-medium shadow-lg shadow-red-900/50"
           >
