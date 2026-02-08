@@ -52,9 +52,14 @@ class BiometricSystem:
         """
         First time capturing the your face, saving the data for future use of analysis.
         """
+
+        #===============================================================================================================================================================================================================
+        #facial recognition part
+        #===============================================================================================================================================================================================================
         temp_path = f"{self.temp_dir}/user_{user_id}.jpg"
 
         cv2.imwrite(temp_path, face_roi)
+
 
         #extract embedding
         embedding = DeepFace.represent(
@@ -66,28 +71,43 @@ class BiometricSystem:
 
         embedded_bytes = np.array(embedded).tobytes() #encoding part
 
-        #encrypt the embedding here
+        #===============================================================================================================================================================================================================
+        #Kyber Encryption
+        #===============================================================================================================================================================================================================
 
         pk, sk = Kyber512.keygen() #public and seret key gen
 
         shared_secret, ciphertext = Kyber512.encaps(pk) #encaps are returning them in the wrong order, shared_secret first cipher text next
 
-        #sha 256 Encryption -> converts to AES key format
+        #===============================================================================================================================================================================================================
+        #SHA Encryption + AES Encryption,  #sha 256 Encryption -> converts to AES key format 
+        #===============================================================================================================================================================================================================
 
         new_SHA = SHA256.new()
 
-        new_SHA.update(shared_secret)
+        new_SHA.update(shared_secret) #add shared secret to the SHA key
 
         aes_key_raw = new_SHA.digest() #convert into bytes
 
         #encrypt with AES, nonce number so that each combination is different
 
-        #figure out how to embedd in the future !!!!!
+        nonce = get_random_bytes(12)  #completely different thing from SHA
+
+        cipher = AES.new(aes_key_raw, AES.MODE_GCM, nonce=nonce) #combination of all 3
+
+        encrypted_embedding, tag = cipher.encrypt_and_digest(embedded_bytes) #tamper detector using tag, so attackers can't change your data
 
         #save encrypted version and set it into a path
         encrypted_path = f"{self.enrolled_dir}/user_{user_id}_encrypted.npy"
        
-        np.save(encrypted_path, f"${}") #fill out quotation with the embedded values
+        data_to_save = {
+            'encrypted': encrypted_embedding,
+            'tag': tag,
+            'nonce': nonce,
+            'ciphertext': ciphertext,
+            'kyber_secret_key': sk
+        }
+        np.save(encrypted_path, data_to_save)
         
         print(f"Face Enrolled for ${user_id}!")
         
@@ -179,7 +199,7 @@ class BiometricSystem:
                 print(f"CV2 ERR {e}")
                 continue
 
-video.release() #after done closes the webcam connection
+video.release() #after done closes the webcam connectio
 
 cv2.destroyAllWindows() #Closes all OpenCV windows
 print("Closed File, Frame")
