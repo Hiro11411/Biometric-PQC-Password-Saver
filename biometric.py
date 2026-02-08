@@ -5,6 +5,7 @@ from kyber_py.kyber import Kyber512
 from Crypto.random import AES
 from Crypto.Random import get_random_bytes
 from Crypto.Hash import SHA256
+import pickle
 import os
 
 #cascade is used for speed, recognition of the different prompts
@@ -48,7 +49,7 @@ class BiometricSystem:
         print(confidence, emotion, emotion_dominant)
         return emotion_dominant, confidence #parameter passing here 
     
-    def first_encode(self, face_roi, user_id):
+    def encryption(self, face_roi, user_id):
         """
         First time capturing the your face, saving the data for future use of analysis.
         """
@@ -106,15 +107,17 @@ class BiometricSystem:
             'ciphertext': ciphertext,
             'kyber_secret_key': sk
         }
-        np.save(encrypted_path, data_to_save)
-        
-        print(f"Face Enrolled for ${user_id}!")
-        
-        return temp_path #for future use and calling
-        
-        os.remove(temp_path)
 
-    def second_encode(self, face_roi, user_id):
+        np.save(encrypted_path, data_to_save, allow_pickle=True) #addition to dictionary
+        #used to load the data later
+        
+        print(f"Face Enrolled for ${user_id}!") #enrolled msg
+        
+        os.remove(temp_path) #remove path so cant trace
+
+        return temp_path #for future use and calling
+
+    def decryption(self, face_roi, user_id):
         """
         Compares your first and tries to verify your face.
         """
@@ -157,6 +160,13 @@ class BiometricSystem:
         
 
     def main(self):
+        #call both functions in main
+
+        encryption() #mainly work on functions here tmr!!
+        decryption() 
+
+
+
         id = self.id_input() #gets the original ID, and inputs here
         count = 0 #counter
         while True: #Main Loop
@@ -210,4 +220,3 @@ print("Closed File, Frame")
 if __name__ == '__main__':
     system = BiometricSystem()
     system.main()
-    

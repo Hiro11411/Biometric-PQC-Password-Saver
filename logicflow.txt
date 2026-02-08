@@ -1,0 +1,44 @@
+Encryption Flow:
+
+. Face Capture
+The webcam captures your face using OpenCV. Haar Cascade detects where your face is in the frame by checking for facial features 
+like eyes and nose using pattern matching. (By arrays, and matching by arrays)
+
+2. Face to Numbers (Embedding)
+DeepFace's Facenet model analyzes your face and converts it into a list of approximately 512 numbers (called an embedding). These 
+numbers uniquely represent your facial features. 
+
+3. Numbers to Bytes
+The list of numbers gets converted to raw bytes because encryption algorithms work on bytes, not lists. This is like converting the 
+ata into a format that the encryption tools can process.
+
+4. Generate Quantum-Safe Keys -> LWE explained further on notes
+Kyber generates a public key and secret key using lattice-based mathematics (Module-LWE). These keys are generated 
+independently from random data, the face bytes are NOT used as input here. The public key encrypts, the secret key decrypts. (pk, sk format)
+
+5. Create Shared Secret
+Kyber's encapsulation function generates a random 32-byte secret and encrypts it using the public key. This produces two things, the shared 
+secret (plaintext) and a ciphertext (encrypted version of that secret). This is quantum-resistant because it's based on hard lattice problems.
+
+6. Prepare AES Key
+SHA-256 hashes the shared secret to format it properly for AES encryption. This is key derivation, not encryption itself, 
+it converts the random bytes into the exact format AES expects. The security still comes from Kyber, SHA-256 just formats the key.
+
+7. Generate Nonce
+A fresh 12-byte pseudorandom number (nonce) is generated. This ensures that even if you encrypt the same face twice with the same key, you get 
+different encrypted outputs. The nonce is used once per encryption to randomize the result.
+
+8. Encrypt Face Data
+AES encryption uses the key (from SHA-256) and nonce together to scramble your face bytes. The key acts like a password, 
+and the nonce is a random starting position. This is where your actual face data gets encrypted, everything before this was preparing the 
+secure key to use here.
+
+9. Authentication Tag
+The encryption process also generates a 16-byte tag, which is a mathematical proof that the data hasn't been tampered with. If anyone modifies 
+the encrypted data, the tag won't match during decryption, and you'll know it was attacked.
+
+10. Save Everything
+Five pieces are saved: the encrypted face data, the authentication tag, the nonce, the Kyber ciphertext, and the Kyber secret key. 
+All five are needed to decrypt later, missing any piece makes decryption impossible.
+
+Decryption Flow(For Comparisson), bug fixing mainly tmr
