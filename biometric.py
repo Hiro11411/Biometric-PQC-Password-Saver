@@ -1,6 +1,10 @@
 import cv2
 from deepface import DeepFace
+from numpy import np
 from kyber_py.kyber import Kyber512
+from Crypto.random import AES
+from Crypto.Random import get_random_bytes
+from Crypto.Hash import SHA256
 import os
 
 #cascade is used for speed, recognition of the different prompts
@@ -38,7 +42,7 @@ class BiometricSystem:
         #write the function here tomorrow
         #analyzation of emotion
         result = DeepFace.analyze(face_roi, actions=['emotion'], enforce_detection=False)
-        emotion_dominant = result[0]['dominant_emotion'] #returns the dominant emotion, retrived FROM THE DICT of emotions
+        emotion_dominant = result[0]['dominant_emotion'] #returns the dominant emotion, retrived FROM THE DICT of emotions, always first column
         emotion = result[0]['emotion'] #returns the emotions, and all the values of emotions
         confidence = emotion[emotion_dominant] / 100.0 #emotional confidence indicator as a percentage
         print(confidence, emotion, emotion_dominant)
@@ -58,16 +62,32 @@ class BiometricSystem:
                 model_name="Facenet"
             )
 
-        embedded = embedding[0]['embedding'] #list of embedded values, Encrypt with this value here
+        embedded = embedding[0]['embedding'] #list of embedded values, convert in bytes
+
+        embedded_bytes = np.array(embedded).tobytes() #encoding part
 
         #encrypt the embedding here
+
+        pk, sk = Kyber512.keygen() #public and seret key gen
+
+        shared_secret, ciphertext = Kyber512.encaps(pk) #encaps are returning them in the wrong order, shared_secret first cipher text next
+
+        #sha 256 Encryption -> converts to AES key format
+
+        new_SHA = SHA256.new()
+
+        new_SHA.update(shared_secret)
+
+        aes_key_raw = new_SHA.digest() #convert into bytes
+
+        #encrypt with AES, nonce number so that each combination is different
 
         #figure out how to embedd in the future !!!!!
 
         #save encrypted version and set it into a path
         encrypted_path = f"{self.enrolled_dir}/user_{user_id}_encrypted.npy"
        
-        np.save(encrypted_path, "") #fill out quotation with the embedded values
+        np.save(encrypted_path, f"${}") #fill out quotation with the embedded values
         
         print(f"Face Enrolled for ${user_id}!")
         
@@ -98,6 +118,7 @@ class BiometricSystem:
         #load and decrypt embedding
 
         #compare embeddings
+        print(f"Comparisson of Shared secret and Private secret ${private_secret == recovered_secret}")
 
 
         result = DeepFace.verify(img1_path=enrolled_path, img2_path=temp_path)
@@ -159,6 +180,7 @@ class BiometricSystem:
                 continue
 
 video.release() #after done closes the webcam connection
+
 cv2.destroyAllWindows() #Closes all OpenCV windows
 print("Closed File, Frame")
 #should implement this here with main function, better for script, and safer/more efficient
