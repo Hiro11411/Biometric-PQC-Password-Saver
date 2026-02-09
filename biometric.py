@@ -1,8 +1,8 @@
 import cv2
 from deepface import DeepFace
-from numpy import np
+import numpy as np
 from kyber_py.kyber import Kyber512
-from Crypto.random import AES
+from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from Crypto.Hash import SHA256
 import pickle
@@ -121,7 +121,9 @@ class BiometricSystem:
         """
         Compares your first and tries to verify your face.
         """
-        #comparisson part
+
+        #path finding
+
         enrolled_encrypted_path = f"{self.enrolled_dir}_{user_id}_encrypted.npy"
 
         if not os.path.exists(enrolled_path):
