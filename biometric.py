@@ -137,6 +137,7 @@ class BiometricSystem:
             img_path=temp_path,
             model_name="Facenet"
         )
+
         current_embedding = embedding[0]['embedding']
 
         #load and decrypt embedding
@@ -146,28 +147,21 @@ class BiometricSystem:
 
 
         result = DeepFace.verify(img1_path=enrolled_path, img2_path=temp_path)
+
+        #Euclidean distance calculation for comparison of facial features
+        #understanding of mathematics within notes, explanation of Euclidean distance
+        
         
         # print(json.dumps(result, indent=2)) #result is a dict
 
         os.remove(temp_path)
-        
 
-        #change up here, wrong logic compare thresholds and distances
-        # if result['verified']:
-        #     print('Correct Person')
-        #     return True
-        # else:
-        #     print('Incorrect Person')
-        #     return False
-        
+#================================================================================================================================
+#Threshold Comparison
+#================================================================================================================================
 
     def main(self):
         #call both functions in main
-
-        encryption() #mainly work on functions here tmr!!
-        decryption() 
-
-
 
         id = self.id_input() #gets the original ID, and inputs here
         count = 0 #counter
@@ -206,6 +200,9 @@ class BiometricSystem:
                     #     break #break program
 
                     #remember to handle errors !!!!!!!! Important asf
+
+                    encryption() #mainly work on functions here tmr!!
+                    decryption()
             except cv2.error as e:
                 print(f"CV2 ERR {e}")
                 continue
