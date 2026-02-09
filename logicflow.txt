@@ -1,6 +1,6 @@
 Encryption Flow:
 
-. Face Capture
+1. Face Capture
 The webcam captures your face using OpenCV. Haar Cascade detects where your face is in the frame by checking for facial features 
 like eyes and nose using pattern matching. (By arrays, and matching by arrays)
 
