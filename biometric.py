@@ -52,6 +52,7 @@ class BiometricSystem:
     def encryption(self, face_roi, user_id):
         """
         First time capturing the your face, saving the data for future use of analysis.
+        REMB SHOULD ONLY BE RUN ONCE, FIX IN THE FUTURE
         """
 
         #===============================================================================================================================================================================================================
@@ -122,8 +123,7 @@ class BiometricSystem:
         Compares your first and tries to verify your face.
         """
 
-        #path finding
-
+        #Comparison of Originally Encrypted Path
         enrolled_encrypted_path = f"{self.enrolled_dir}_{user_id}_encrypted.npy"
 
         if not os.path.exists(enrolled_path):
@@ -140,18 +140,47 @@ class BiometricSystem:
 
         current_embedding = embedding[0]['embedding']
 
-        #load and decrypt embedding
+        #load and decrypt embedding(Hashed Key + Kyber + AES)
+        data = np.load(enrolled_encrypted_path, allow_pickle=True).item()
 
-        #compare embeddings
-        print(f"Comparisson of Shared secret and Private secret ${private_secret == recovered_secret}")
+        #DATA TO SAVE
+        #========================================================================================================
+        encrypted_embedding = data['encrypted'] #taken in data to save
+        tag = data['tag']
+        nonce = data['nonce']
+        kyber_ciphertext = data['ciphertext']
+        secret_key = data['kyber_secret_key']
+        #========================================================================================================
 
-
-        result = DeepFace.verify(img1_path=enrolled_path, img2_path=temp_path)
+        recovered_secret = Kyber512.decaps(secret_key, kyber_ciphertext) #using cipher text, for sec key
+        #hash secret one more time to get the same key
+        hash_obj = SHA256.new()
+        hash_obj.update(recovered_secret)
+        aes_key_new = has_obj.digest()
+        #decryption
+        cipher = AES.new(aes_key_new, AES.MODE_GCM, nonce=nonce) #GCM
+        decrypted_bytes = cipher.decrypt_and_verify(encrypted_embedding, tag) #checks for tampering with tag
+        #if tag matches returns decrypted bytes
+        stored_embedding = np.frombuffer(decrypted_bytes, dtype=np.float64).tolist() #embedded bytes of original face
 
         #Euclidean distance calculation for comparison of facial features
         #understanding of mathematics within notes, explanation of Euclidean distance
-        
-        
+
+        value1 = [] #empty list add the difference in values for euc calc
+        face_feature_A = stored_embedding
+        face_feature_B = current_embedding
+
+        #threshold calculation
+        for i in range(len(face_feature_A)):
+            difference = face_feature_A[i] - face_feature_B[i]
+            squared = difference ** 2
+            value1.append[squared]
+            sum_of_squares = sum(value1)
+            distance  = sqrt(sum_of_squares)
+            print(f"Distance is ${distance}") #might want to consider threshold here
+            max_same_person = max(distances)
+            print(f"Set threshold above: {max_same_person}") #for debugging and setting purposes right now
+            return distance
         # print(json.dumps(result, indent=2)) #result is a dict
 
         os.remove(temp_path)

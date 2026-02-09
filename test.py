@@ -133,7 +133,8 @@ from Crypto.Hash import SHA256
 
 #threshold testing
 # Capture your face 10 times
-distances = []
+
+value1 = []
 
 for i in range(10):
     face1 = capture_face()
