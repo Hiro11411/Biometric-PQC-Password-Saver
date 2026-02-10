@@ -49,7 +49,7 @@ class BiometricSystem:
         print(confidence, emotion, emotion_dominant)
         return emotion_dominant, confidence #parameter passing here 
     
-    def encryption(self, face_roi, user_id):
+    def biometirc_encryption(self, face_roi, user_id):
         """
         First time capturing the your face, saving the data for future use of analysis.
         REMB SHOULD ONLY BE RUN ONCE, FIX IN THE FUTURE
@@ -118,7 +118,7 @@ class BiometricSystem:
 
         return temp_path #for future use and calling
 
-    def decryption(self, face_roi, user_id):
+    def biometric_decryption(self, face_roi, user_id):
         """
         Compares your first and tries to verify your face.
         """
@@ -193,6 +193,17 @@ class BiometricSystem:
 
         os.remove(temp_path)
 
+#figure out PostregSQL
+    def pw_encryption(self):
+        """
+        Same process as biometric Encryption store with PostregSQL.
+        """
+        pass
+    def pw_decryption(self):
+        """
+        Same process as biometirc decryption store with PostregSQL, retrive from DB
+        """
+        pass
 # #Only used for testing within local
 #     def main(self):
 #         #call both functions in main
