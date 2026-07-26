@@ -1,5 +1,7 @@
+import time
 import cv2
 from deepface import DeepFace
+from deepface.modules.exceptions import SpoofDetected
 import numpy as np
 from kyber_py.kyber import Kyber512
 from Crypto.Cipher import AES
@@ -8,20 +10,70 @@ from Crypto.Hash import SHA256
 import pickle
 import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 #cascade is used for speed, recognition of the different prompts
 #haar features used, check notes
-class BiometricSystem: 
-    def __init__(self):
-        #video section
-        video=self.cv2.VideoCapture(0)
-        self.face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml') #calling self, to later access it in the future
+class BiometricSystem:
+    def __init__(self, anti_spoofing=True):
+        """
+        anti_spoofing=True (the secure default) rejects photos/screens shown
+        to the camera instead of a live face. Only disable this for testing
+        against canned/static images that aren't meant to simulate liveness --
+        never disable it for real enrollment/verification.
+        """
+        self.anti_spoofing = anti_spoofing
+
+        cascade_path = os.path.join(BASE_DIR, 'haarcascade_frontalface_default.xml')
+        self.face_cascade = cv2.CascadeClassifier(cascade_path) #calling self, to later access it in the future
 
         #file directory section
-        self.enrolled_dir = "data/enrolled_faces"
-        self.temp_dir = "data/temp_faces"
+        self.enrolled_dir = os.path.join(BASE_DIR, "data", "enrolled_faces")
+        self.temp_dir = os.path.join(BASE_DIR, "data", "temp_faces")
         os.makedirs(self.enrolled_dir, exist_ok=True)
         os.makedirs(self.temp_dir, exist_ok=True)
 
+    def capture_face_roi(self, timeout_seconds=8):
+        """
+        Opens the webcam and waits until a face is roughly present in view,
+        then returns the FULL captured frame -- not a tight pre-crop.
+
+        Haar cascade boxes jitter noticeably frame-to-frame (no consistent
+        eye-level alignment), so pre-cropping tightly to that box was handing
+        DeepFace a differently-framed, unaligned face patch on every call.
+        That made FaceNet embeddings unreliable (wildly varying distances
+        for the same live face) and also fed the anti-spoofing model an
+        unnatural, context-free image. DeepFace's own detector (with
+        align=True by default) does proper face detection + alignment when
+        given the full frame -- Haar cascade here is only a cheap gate to
+        decide "yes, a face is roughly in view, proceed."
+        """
+        video = cv2.VideoCapture(0, cv2.CAP_DSHOW) #DSHOW avoids MSMF frame-grab failures on some Windows webcams
+        if not video.isOpened():
+            raise RuntimeError("Could not access webcam")
+
+        try:
+            start = time.time()
+            consecutive_failures = 0
+            while time.time() - start < timeout_seconds:
+                ret, frame = video.read()
+                if not ret:
+                    consecutive_failures += 1
+                    if consecutive_failures > 50:
+                        raise RuntimeError("Webcam opened but repeatedly failed to grab frames")
+                    time.sleep(0.05) #avoid a tight spin loop while waiting for a real frame
+                    continue
+                consecutive_failures = 0
+
+                gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) #START IN GRAY COLOR, using BGR FORMAT NOT RGB
+                faces = self.face_cascade.detectMultiScale(gray, 1.3, 5)
+
+                if len(faces) > 0:
+                    return frame #hand DeepFace's own detector the full frame for proper alignment
+
+            raise RuntimeError("No face detected within timeout")
+        finally:
+            video.release()
 
     def id_input(self): #func for now only, change in the future
         """
@@ -30,7 +82,7 @@ class BiometricSystem:
         while True: #while function automatically restarts
             try:
                 user_id = int(input("Enter Your ID: ")) #must be an integer value or flag as false
-                return user_id 
+                return user_id
             except ValueError:
                 print("This user_id is invalid, please try again !") #returns val error
 
@@ -40,16 +92,15 @@ class BiometricSystem:
         Tracks emotion based off different percentages in the confidence of expression the person is making, provides a threshold so more stablizied results
         in if the faces they are making are correct or not.
         """
-        #write the function here tomorrow
         #analyzation of emotion
         result = DeepFace.analyze(face_roi, actions=['emotion'], enforce_detection=False)
         emotion_dominant = result[0]['dominant_emotion'] #returns the dominant emotion, retrived FROM THE DICT of emotions, always first column
         emotion = result[0]['emotion'] #returns the emotions, and all the values of emotions
         confidence = emotion[emotion_dominant] / 100.0 #emotional confidence indicator as a percentage
         print(confidence, emotion, emotion_dominant)
-        return emotion_dominant, confidence #parameter passing here 
-    
-    def biometirc_encryption(self, face_roi, user_id):
+        return emotion_dominant, confidence #parameter passing here
+
+    def biometric_encryption(self, face_roi, user_id):
         """
         First time capturing the your face, saving the data for future use of analysis.
         REMB SHOULD ONLY BE RUN ONCE, FIX IN THE FUTURE
@@ -65,12 +116,17 @@ class BiometricSystem:
         #===============================================================================================================================================================================================================
         #Kyber Encryption
         #===============================================================================================================================================================================================================
-        
+
         #extract embedding, specific model
-        embedding = DeepFace.represent(
-                img_path = temp_path,
-                model_name="Facenet"
-            )
+        try:
+            embedding = DeepFace.represent(
+                    img_path = temp_path,
+                    model_name="Facenet",
+                    anti_spoofing=self.anti_spoofing, #reject photos/screens shown to the camera during enrollment
+                )
+        except SpoofDetected:
+            os.remove(temp_path)
+            raise ValueError("Spoof detected during enrollment -- use a live face, not a photo or screen")
 
         embedded = embedding[0]['embedding'] #list of embedded values, convert in bytes
 
@@ -100,7 +156,7 @@ class BiometricSystem:
 
         #save encrypted version and set it into a path
         encrypted_path = f"{self.enrolled_dir}/user_{user_id}_encrypted.npy"
-       
+
         data_to_save = {
             'encrypted': encrypted_embedding,
             'tag': tag,
@@ -111,12 +167,12 @@ class BiometricSystem:
 
         np.save(encrypted_path, data_to_save, allow_pickle=True) #addition to dictionary
         #used to load the data later
-        
-        print(f"Face Enrolled for ${user_id}!") #enrolled msg
-        
+
+        print(f"Face Enrolled for {user_id}!") #enrolled msg
+
         os.remove(temp_path) #remove path so cant trace
 
-        return temp_path #for future use and calling
+        return encrypted_path #for future use and calling
 
     def biometric_decryption(self, face_roi, user_id):
         """
@@ -124,19 +180,25 @@ class BiometricSystem:
         """
 
         #Comparison of Originally Encrypted Path
-        enrolled_encrypted_path = f"{self.enrolled_dir}_{user_id}_encrypted.npy"
+        enrolled_encrypted_path = f"{self.enrolled_dir}/user_{user_id}_encrypted.npy"
 
-        if not os.path.exists(enrolled_path):
+        if not os.path.exists(enrolled_encrypted_path):
             print("No enrolled data for this user") #link this back to your front end
-            return False
+            return {"verified": False, "distance": None, "spoof_detected": False}
 
         temp_path = f"{self.temp_dir}/temp_{user_id}.png" #temp path for access
         cv2.imwrite(temp_path, face_roi)
 
-        embedding = DeepFace.represent(
-            img_path=temp_path,
-            model_name="Facenet"
-        )
+        try:
+            embedding = DeepFace.represent(
+                img_path=temp_path,
+                model_name="Facenet",
+                anti_spoofing=self.anti_spoofing, #reject photos/screens shown to the camera during verification
+            )
+        except SpoofDetected:
+            os.remove(temp_path)
+            print("Spoof detected -- rejecting a photo/screen presented instead of a live face")
+            return {"verified": False, "distance": None, "spoof_detected": True}
 
         current_embedding = embedding[0]['embedding']
 
@@ -156,42 +218,31 @@ class BiometricSystem:
         #hash secret one more time to get the same key
         hash_obj = SHA256.new()
         hash_obj.update(recovered_secret)
-        aes_key_new = has_obj.digest()
+        aes_key_new = hash_obj.digest()
         #decryption
         cipher = AES.new(aes_key_new, AES.MODE_GCM, nonce=nonce) #GCM
         decrypted_bytes = cipher.decrypt_and_verify(encrypted_embedding, tag) #checks for tampering with tag
         #if tag matches returns decrypted bytes
-        stored_embedding = np.frombuffer(decrypted_bytes, dtype=np.float64).tolist() #embedded bytes of original face
+        stored_embedding = np.frombuffer(decrypted_bytes, dtype=np.float64) #embedded bytes of original face
 
         #Euclidean distance calculation for comparison of facial features
         #understanding of mathematics within notes, explanation of Euclidean distance
-
-        value1 = [] #empty list add the difference in values for euc calc
         face_feature_A = stored_embedding
-        face_feature_B = current_embedding
+        face_feature_B = np.array(current_embedding)
 
-        #threshold calculation
-        for i in range(len(face_feature_A)):
-            difference = face_feature_A[i] - face_feature_B[i]
-            squared = difference ** 2
-            value1.append[squared]
-            sum_of_squares = sum(value1)
-            distance  = sqrt(sum_of_squares)
-            print(f"Distance is ${distance}") #might want to consider threshold here
-            max_same_person = max(distances)
-            print(f"Set threshold above: {max_same_person}") #for debugging and setting purposes right now
-        
+        distance = float(np.linalg.norm(face_feature_A - face_feature_B))
+        print(f"Distance is {distance}") #might want to consider threshold here
+
+        os.remove(temp_path)
+
         #================================================================================================================================
         #Threshold Comparison
         #========================================================================================================================================
+        verified = 0.6 <= distance <= 0.8 #Safest distance range for threshold
+        if not verified:
+            print(f"This euclidian distance doesn't fit the threshold {distance}")
 
-            if 0.6 <= distance <= 0.8: #Safest distance range for threshold
-                return distance
-            else:
-                print(f"This euclidian distance doesn't fit the threshold ${distance}")
-                return 0
-
-        os.remove(temp_path)
+        return {"verified": verified, "distance": distance, "spoof_detected": False}
 
 #figure out PostregSQL
     def pw_encryption(self):
@@ -204,63 +255,7 @@ class BiometricSystem:
         Same process as biometirc decryption store with PostregSQL, retrive from DB
         """
         pass
-# #Only used for testing within local
-#     def main(self):
-#         #call both functions in main
-
-#         id = self.id_input() #gets the original ID, and inputs here
-#         count = 0 #counter
-#         while True: #Main Loop
-#             try:     
-#                 ret, frame = self.video.read() #when camera empty, _src.empty() in func
-
-#                 if not ret: #meaning that if Camera doesn't work continues running 
-#                     video.read() #fix here later main problem
-#                     continue
-
-#                 gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) #START IN GRAY COLOR, using BGR FORMAT NOT RGB
-
-#                 faces = self.face_cascade.detectMultiScale(gray, 1.3, 5)
-#                 for (x, y, w, h) in faces: #tuple, takes tuple data and uses it within rectangle
-#                     count=count+1 #counter to count the amount of photos taken, then translate
-                        
-#                     face_roi = frame[y:y+h, x:x+w]#reigon of interest, face
-
-#                     emotion_dominant, confidence = self.emotional_analyzer(face_roi) #takes in ONLY face_roi, returns variables and determines theresholds
-#                     #passing parameter succesfully here.
-
-#                     cv2.imwrite('datasets/User.'+str(id)+"."+str(count)+".jpg", gray[y:y+h, x:x+w])
-#                     cv2.rectangle(frame, (x,y), (x+w, y+h), (50, 50, 225), 1) #tuple data used within here
-#                     cv2.putText(frame, emotion_dominant, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2) #emotion shown
-
-#                     #constructs rectange
-
-#                     cv2.imshow("Frame", frame)
-                    
-#                     key = cv2.waitKey(1) #waiting for key press in 1 ms, if key press then ..
-                    
-#                     if key==ord('q'):
-#                         break
-#                     # if count > 500: #deletes program, when q key is pressed
-#                     #     break #break program
-
-#                     #remember to handle errors !!!!!!!! Important asf
-
-#                     encryption() #mainly work on functions here tmr!!
-#                     decryption()
-#             except cv2.error as e:
-#                 print(f"CV2 ERR {e}")
-#                 continue
-
-# video.release() #after done closes the webcam connectio
-
-# cv2.destroyAllWindows() #Closes all OpenCV windows
-# print("Closed File, Frame")
-#should implement this here with main function, better for script, and safer/more efficient
-
-#encoding for first time vs encoding for second time
 
 #runs script
 if __name__ == '__main__':
     system = BiometricSystem()
-    # system.main()
