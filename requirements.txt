@@ -5,3 +5,4 @@ kyber-py
 pycryptodome
 tf-keras
 torch
+scikit-learn  # only needed for collect_lfw_distances.py's accuracy benchmark, not the app itself
